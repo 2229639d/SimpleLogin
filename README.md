@@ -20,4 +20,12 @@
 
 6. Done
  
+=====
+
+## API Routes
+	* GET/register: used to render register.pug
+	* GET/login: used to render login.pug
+	* POST/register: used to get signup/register
+	* POST/login: used to login as a regitered user
+	* GET/verifyCredentials: used to test the validation Token
  
