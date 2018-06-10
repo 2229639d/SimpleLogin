@@ -9,14 +9,16 @@ html
       a.navbar-brand(href='#') SimpleLogin
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavAltMarkup', aria-controls='navbarNavAltMarkup', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
-      #navbarNavAltMarkup.collapse.navbar-collapse
+      #navbarNavAltMarkup.collapse.navbar-collapse.justify-content-end
         .navbar-nav
-          a.nav-item.nav-link(class=(title == 'Clients Area' ? 'active':''))(href='/')
-            | Clients Area
-            span.sr-only (current)
-          a.nav-item.nav-link(class=(title == 'Register' ? 'active':''))(href='/users/register') Register
-          a.nav-item.nav-link(class=(title == 'Login' ? 'active':''))(href='/users/login') Login
-          a.nav-item.nav-link.disabled(href='/users/logout') Logout
+          if user
+            a.nav-item.nav-link(class=(title == 'Clients Area' ? 'active':''))(href='/')
+              | Clients Area
+          if !user
+            a.nav-item.nav-link(class=(title == 'Register' ? 'active':''))(href='/users/register') Register
+            a.nav-item.nav-link(class=(title == 'Login' ? 'active':''))(href='/users/login') Login
+          if user
+            a.nav-item.nav-link(href='/users/logout') Logout
     !=messages()
     block content
 

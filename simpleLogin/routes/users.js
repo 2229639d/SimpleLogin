@@ -98,5 +98,11 @@ passport.use(new localStrategy(function(username, password, done){
     });
   });
 }));
+
+router.get('/logout', function(req, res){
+  req.logout();
+  req.flash('success', 'Log out successfull!');
+  res.redirect('/users/login');
+});
   
 module.exports = router;
