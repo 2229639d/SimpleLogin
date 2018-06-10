@@ -9,6 +9,7 @@ var session = require('express-session');
 var passport = require('passport');
 var multer = require('multer');
 var connectFlash = require('connect-flash');
+var bcrypt = require('bcryptjs');
 var mongoDB = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;

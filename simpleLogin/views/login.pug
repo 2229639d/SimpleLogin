@@ -3,7 +3,7 @@ extends layout
 block content
   h2.page-header Login
   p Log in to Clients Area
-  form(method='post', action='/users/register', enctype='multipart/form-data')
+  form(method='post', action='/users/login')
     .form-group
       label Username
       input.form-control(name='username', type='text', placeholder='Enter Userame')

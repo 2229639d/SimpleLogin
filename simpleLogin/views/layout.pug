@@ -17,6 +17,7 @@ html
           a.nav-item.nav-link(class=(title == 'Register' ? 'active':''))(href='/users/register') Register
           a.nav-item.nav-link(class=(title == 'Login' ? 'active':''))(href='/users/login') Login
           a.nav-item.nav-link.disabled(href='/users/logout') Logout
+    !=messages()
     block content
 
   script(src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js")
