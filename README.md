@@ -19,8 +19,7 @@
     - Log Out
 
 6. Done
- 
-=====
+
 
 ## API Routes
 	* GET/register: used to render register.pug
