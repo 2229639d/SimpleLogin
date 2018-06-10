@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var expressValidator = require('express-validator');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressValidator())
 
 //session handler
 app.use(session({
@@ -42,36 +44,6 @@ app.use(session({
 //passport handler
 app.use(passport.initialize());
 app.use(passport.session());
-
-//express
-app.use(express.json());
-app.post('/user', (req, res) => {
-  User.create({
-    username: req.body.username,
-    password: req.body.password
-  }).then(user => res.json(user));
-});
-
-//express-validator
-var { check, validationResult } = require('express-validator/check');
-
-app.post('/user', [
-  // username must be an email
-  check('username').isEmail(),
-  // password must be at least 5 chars long
-  check('password').isLength({ min: 5 })
-], (req, res) => {
-  // Finds the validation errors in this request and wraps them in an object with handy functions
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(422).json({ errors: errors.array() });
-  }
-
-  User.create({
-    username: req.body.username,
-    password: req.body.password
-  }).then(user => res.json(user));
-});
 
 //connect-flash
 app.use(require('connect-flash')());
