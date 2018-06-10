@@ -1,9 +1,9 @@
 # SimpleLogin
 
  1. Download and install:
-      ..- [Git Bash](https://git-scm.com/downloads)
-      ..- [Node JS](https://nodejs.org/en/)
-      ..- [MongoDB Community Edition](https://www.mongodb.com/download-center#community)
+      ...- [Git Bash](https://git-scm.com/downloads)
+      ...- [Node JS](https://nodejs.org/en/)
+      ...- [MongoDB Community Edition](https://www.mongodb.com/download-center#community)
 
  2. Start MongoDB and create **'SimpleLogin'** database.
  
